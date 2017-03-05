@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// Implementing the DataSource functions
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems.count
@@ -82,7 +82,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = todoItems[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = item.value(forKeyPath: "name") as? String
+        cell.textLabel?.text = item.value(forKeyPath: "todo") as? String
         return cell
     }
 }
